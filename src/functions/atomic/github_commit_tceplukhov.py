@@ -1,5 +1,4 @@
-
-"""gfdfgdfg"""
+"""Модуль имплементирует функции телеграмм бота"""
 from typing import List
 import requests
 import telebot
@@ -10,11 +9,10 @@ from bot_func_abc import AtomicBotFunctionABC
 class AtomicSearchArtistBotFunction(AtomicBotFunctionABC):
     """docstring"""
     commands: List[str] = ["Text_Generate", "genre_generate"]
-    authors: List[str] = ["IHVH"]
-    about: str = "Генерация текста заданой длины!"
-    description: str = """В поле  *description* поместите подробную информацию о работе функции.
-    Описание способов использования, логики работы. Примеры вызова функции - /ebf 
-    Возможные параметры функции `/example`  """
+    authors: List[str] = ["thenikitago@yahoo.com"]
+    about: str = "Генерация текста разной длины"
+    description: str = """Бот предлаегает ввести пользователю длину будущего генерируемого текста для песни.
+    Под длинной подразумевается колиxество генерируемых строчек. После чего, бот возвращает созданный текст пользователю"""
     state: bool = True
     example_keyboard_factory: CallbackData
     bot: telebot.TeleBot
@@ -24,7 +22,7 @@ class AtomicSearchArtistBotFunction(AtomicBotFunctionABC):
         self.bot = bot
 
         @bot.message_handler(commands=self.commands[0])
-        def search_artist_info_handler(message: types.Message):
+        def Search_artist_info_handler(message: types.Message):
             bot.reply_to(message, "Введите количество генерируемых строк:")
             bot.register_next_step_handler(message, handle_user_input)
 
