@@ -1,3 +1,4 @@
+
 """gfdfgdfg"""
 from typing import List
 import requests
@@ -23,7 +24,7 @@ class AtomicSearchArtistBotFunction(AtomicBotFunctionABC):
         self.bot = bot
 
         @bot.message_handler(commands=self.commands[0])
-        def Search_artist_info_handler(message: types.Message):
+        def search_artist_info_handler(message: types.Message):
             bot.reply_to(message, "Введите количество генерируемых строк:")
             bot.register_next_step_handler(message, handle_user_input)
 
