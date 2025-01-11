@@ -11,11 +11,11 @@ class AtomicSearchArtistBotFunction(AtomicBotFunctionABC):
     authors: List[str] = ["IHVH"]
     about: str = "Генерация текста заданой длины!"
     description: str = """В поле  *description* поместите подробную информацию о работе функции.
-    Описание способов использования, логики работы. Примеры вызова функции - /ebf 
+    Описание способов использования, логики работы. Примеры вызова функции "В поле  *description* поместите подробную информацию о работе функции.
+    Описание способов использования, логики работы. Примеры вызова функции- /ebf 
     Возможные параметры функции `/example`  """
-    state: bool = True
-
     bot: telebot.TeleBot
+    state: bool = True
     example_keyboard_factory: CallbackData
 
     
