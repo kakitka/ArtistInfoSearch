@@ -2,7 +2,7 @@
 the bot's atomic functions must be inherited."""
 
 from typing import List
-from abc import ABC, abstractmethod
+from abc import ABC, abstractmethod #.l.
 import telebot
 
 class AtomicBotFunctionABC(ABC):
