@@ -9,7 +9,7 @@ from bot_func_abc import AtomicBotFunctionABC
 class AtomicSearchArtistBotFunction(AtomicBotFunctionABC):
     """docstring"""
     commands: List[str] = ["Text_Generate", "genre_generate"]
-    authors: List[str] = ["thenikitago@yahoo.com"]
+    authors: List[str] = ["github.com/kakitka"]
     about: str = "Генерация текста разной длины"
     description: str = """Бот предлаегает ввести пользователю длину будущего генерируемого текста для песни.
     Под длинной подразумевается колиxество генерируемых строчек. После чего, бот возвращает созданный текст пользователю"""
