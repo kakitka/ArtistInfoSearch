@@ -1,3 +1,4 @@
+"""gfdfgdfg"""
 from typing import List
 import requests
 import telebot
@@ -25,14 +26,14 @@ class AtomicSearchArtistBotFunction(AtomicBotFunctionABC):
         def Search_artist_info_handler(message: types.Message):
             bot.reply_to(message, "Введите количество генерируемых строк:")
             bot.register_next_step_handler(message, handle_user_input)
-            
+
         def text_generator(length_text):
             url = "https://binaryjazz.us/wp-json/genrenator/v1/story"
             length_text_url = f"{url}/{length_text}/"
-            response = requests.get(length_text_url)
+            response = requests.get(length_text_url, timeout=5)
             finished_text = response.json()
             return finished_text
-        
+
         def handle_user_input(message:types.Message):
             length_text = message.text.strip().upper()
             text_for_song = text_generator(length_text)
@@ -42,9 +43,9 @@ class AtomicSearchArtistBotFunction(AtomicBotFunctionABC):
         def generate_genre(message: types.Message):
             genre_text = genre_generate
             bot.reply_to(message, f"Сгенерированный жанр: \n{genre_text}")
-            
+
         def genre_generate():
             url = "https://binaryjazz.us/wp-json/genrenator/v1/genre/"
-            response = requests.get(url)
+            response = requests.get(url, timeout=5)
             finished_text = response.json()
             return finished_text
